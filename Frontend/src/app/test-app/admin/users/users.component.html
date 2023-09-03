@@ -1,0 +1,17 @@
+<table class="searchTable">
+    <tr>
+        <th>UserName</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Authority</th>
+        <th>Account Status</th>
+    </tr>
+    <tr *ngFor="let u of users">
+        <td>{{u.email}}</td>
+        <td>{{u.firstName}}</td>
+        <td>{{u.lastName}}</td>
+        <td>{{u.authorities[0].authority}}</td>
+        <td *ngIf="u.enabled" (click)="userChange(u)" style="cursor: pointer;">Active</td>
+        <td *ngIf="!u.enabled" (click)="userChange(u)" style="cursor: pointer;">Non-Active</td>
+    </tr>
+</table>

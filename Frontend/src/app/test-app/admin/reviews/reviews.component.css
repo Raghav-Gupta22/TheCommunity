@@ -1,0 +1,18 @@
+.centered{
+    width: 70%;
+    margin: 30px auto;
+    text-align: justify;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .content {
+    background-image: url("https://images4.alphacoders.com/839/83944.jpg");
+    height: 94vh;
+  }
+
+  .top-left {
+    margin: 10px 0px;
+    color: black;
+    font-size: 30px;
+    width: fit-content;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }

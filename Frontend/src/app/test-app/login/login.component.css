@@ -1,0 +1,36 @@
+.example-button-row button,
+.example-button-row a {
+  margin-right: 28px;
+}
+.container {
+  margin: 60px auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid black;
+  width: fit-content;
+}
+.example-form {
+  /* min-width: 150px;
+    width: 500px;
+    width: 100%; */
+  width: 400px;
+}
+
+.newUser {
+  margin-top: 20px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.content {
+  background-image: url("https://cutewallpaper.org/21/black-abstract-wallpaper-hd/49+-Black-Abstract-Wallpaper-HD-on-WallpaperSafari.jpg");
+  height: 94vh;
+}
+.black-background {
+  background-color: #000000;
+}
+.white {
+  color: #ffffff;
+}

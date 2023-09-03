@@ -1,0 +1,70 @@
+<div class="body">
+    <div class="header">
+      <mat-grid-list cols="5" rowHeight="40px">
+          <mat-grid-tile [colspan]=1 [rowspan]=1>
+              
+            <button mat-icon-button color="basic" routerLink="home">
+              <mat-icon>home</mat-icon>Home
+            </button>
+          </mat-grid-tile>
+          <mat-grid-tile [colspan]=4 [rowspan]=1>
+              <div class="top-right" *ngIf="loggedIn()">
+                  <a (click)="logout()"><span class="material-icons">
+                          logout
+                  </span>Logout</a>
+                  </div>
+          </mat-grid-tile>
+      </mat-grid-list>
+  </div>
+    <div class="container" >
+      
+      <div *ngIf="rt==0">
+        <form class="example-form" (submit)="requestReview(addPostForm)" #addPostForm="ngForm">
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Product Name</mat-label>
+              <input matInput placeholder="Product Name" ngModel required name="productName">
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Brand</mat-label>
+                <input matInput placeholder="Product Brand" ngModel required name="brand">
+              </mat-form-field>
+      
+              <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Product Code</mat-label>
+                  <input matInput placeholder="Product Code" ngModel required name="productCode">
+                </mat-form-field>
+              
+            <div class="example-button-row">
+                <button mat-raised-button type="submit" color="basic">Request for Review</button>
+                <button mat-raised-button type="reset" color="warn" routerLink="home">Cancel</button>
+            </div>
+        </form>
+      
+      </div>
+
+      <div *ngIf="rt==1">
+        <div class="centered" *ngFor="let r of reviews">
+          
+          <div *ngIf="r.approved && r.approved != null">
+              <mat-card class="example-card">
+                  <mat-card-title>{{r.heading}}</mat-card-title>
+                  <mat-card-subtitle><ngb-rating style="font-size: 20px;
+                      color:yellow;" [max]="5" [(rate)]="r.rating" [readonly]="true"></ngb-rating></mat-card-subtitle>
+                  <mat-card-content>
+                      <p>{{r.review}}</p>
+                  </mat-card-content>
+                  <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                  </mat-card-actions>
+              </mat-card>
+          </div>
+      </div>
+      </div>
+
+      </div>
+
+    </div>
+    
+ 

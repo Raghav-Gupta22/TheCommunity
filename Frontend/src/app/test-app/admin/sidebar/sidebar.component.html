@@ -1,0 +1,9 @@
+<mat-card>
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item (click)="routerHome()"><mat-icon mat-list-icon>home</mat-icon>Home</button>
+        <button mat-list-item routerLink="/admin/users"><mat-icon mat-list-icon>account_circle</mat-icon>Users</button>
+        <button mat-list-item routerLink="/admin/products"><mat-icon mat-list-icon>cases</mat-icon>Products</button>
+        <button mat-list-item routerLink="/admin/reviews"><mat-icon mat-list-icon>reviews</mat-icon>Reviews</button>
+    </mat-action-list>
+</mat-card>

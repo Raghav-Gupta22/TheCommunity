@@ -1,0 +1,42 @@
+<div class="body">
+  <div class="header">
+    <mat-grid-list cols="5" rowHeight="40px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-icon-button color="primary" (click)="routerHome()">
+          <mat-icon>home</mat-icon>Back To Home
+        </button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div class="top-right" *ngIf="loggedIn()" style="cursor: pointer">
+          <a (click)="logout()"
+            ><span class="material-icons"> logout </span>Logout</a
+          >
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="grid-container"></div>
+
+  <div class="centered" *ngFor="let r of review">
+    <div *ngIf="r.approved && r.approved != null">
+      <mat-card class="example-card">
+        <mat-card-title>{{ r.heading }}</mat-card-title>
+        <mat-card-subtitle
+          ><ngb-rating
+            style="font-size: 20px; color: yellow"
+            [max]="5"
+            [(rate)]="r.rating"
+            [readonly]="true"
+          ></ngb-rating
+        ></mat-card-subtitle>
+        <mat-card-content>
+          <p>{{ r.review }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

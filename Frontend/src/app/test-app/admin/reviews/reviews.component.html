@@ -1,0 +1,21 @@
+<div class="reviews">
+    <div class="centered" *ngFor="let r of review">
+        <div *ngIf="!r.approved || r.approved == null">
+            <mat-card class="example-card">
+                <!-- <mat-card-title>{{r.heading}}</mat-card-title> -->
+                <mat-card-subtitle><ngb-rating style="font-size: 20px;
+                    color:yellow;" [max]="5" [(rate)]="r.rating" [readonly]="true"></ngb-rating></mat-card-subtitle>
+                <mat-card-content>
+                <p>{{r.review}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                <button mat-button (click)="approveReview(r)">APPROVE</button>
+                
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+    <div class="centered" *ngIf="review.length==0">
+        <h2>All Reviews are Approved</h2>
+    </div>
+</div>

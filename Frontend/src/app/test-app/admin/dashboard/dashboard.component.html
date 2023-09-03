@@ -1,0 +1,34 @@
+<div class="main-container">
+
+  <div class="header">
+    <mat-grid-list cols="5" rowHeight="40px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <div class="top-left" *ngIf="loggedIn()">
+          Welcome! {{ currentUser() }}
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div class="top-right" style="cursor: pointer" *ngIf="loggedIn()">
+          <a (click)="logout()"
+            ><span class="material-icons"> logout </span>Logout</a
+          >
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="content">
+    <div class="grid-container">
+      <div class="grid-item item1">
+        <div class="sidebar">
+          <app-sidebar></app-sidebar>
+        </div>
+      </div>
+
+      <div class="grid-item item2">
+        <div class="outlets">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

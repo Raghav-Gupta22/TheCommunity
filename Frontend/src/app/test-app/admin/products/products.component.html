@@ -1,0 +1,18 @@
+<div style="float: right;">
+    <button mat-raised-button color="basic" routerLink="/admin/addProduct">Add New Product</button>
+</div>
+<table class="searchTable">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Brand</th>
+        <th>Product Code</th>
+    </tr>
+    <tr *ngFor="let p of products">
+        <td>{{p.productId}}</td>
+        <td>{{p.productName}}</td>
+        <td>{{p.brand}}</td>
+        <td>{{p.productCode}}</td>
+    </tr>
+
+</table>

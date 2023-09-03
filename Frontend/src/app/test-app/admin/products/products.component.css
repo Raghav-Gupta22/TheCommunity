@@ -1,0 +1,10 @@
+.searchTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 800px;
+  }
+  
+  .searchTable td, .searchTable th {
+    border: 1px solid black;
+    padding: 8px;
+  }

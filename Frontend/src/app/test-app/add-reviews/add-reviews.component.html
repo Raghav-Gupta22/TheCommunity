@@ -1,0 +1,63 @@
+<div class="body">
+  <div class="header">
+    <mat-grid-list cols="5" rowHeight="40px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button mat-icon-button color="primary" routerLink="home">
+          <mat-icon>home</mat-icon>Home
+        </button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="4" [rowspan]="1">
+        <div class="top-right" *ngIf="loggedIn()" style="cursor: pointer">
+          <a (click)="logout()"
+            ><span class="material-icons"> logout </span>Logout</a
+          >
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="container">
+    <form
+      class="example-form"
+      (submit)="addReview(addPostForm)"
+      #addPostForm="ngForm"
+    >
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Rating</mat-label>
+        <input
+        type="number"
+          matInput
+          placeholder="Post Category"
+          ngModel
+          required
+          name="rating"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Review</mat-label>
+        <textarea
+          matInput
+          placeholder="Post Content"
+          required
+          ngModel
+          name="review"
+          minlength="20"
+          maxlength="400"
+        ></textarea>
+      </mat-form-field>
+
+      <div class="example-button-row">
+        <button
+          [disabled]="addPostForm.invalid"
+          class="black-background white"
+          mat-raised-button
+          type="submit"
+          color="basic"
+        >
+          Add
+        </button>
+        <button mat-raised-button color="warn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
